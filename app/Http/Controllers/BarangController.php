@@ -71,4 +71,35 @@ class BarangController extends Controller
     return redirect()->route('barangs')->with('pesan','Data berhasil dihapus.');
     }
 
+    public function update($id_barang){
+        Request()->validate([
+            'id_barang' => 'required',
+            'nama_barang' => 'required',
+            'harga' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'stok' => 'required|min:1|max:3',
+            'nama_supplier' => 'required',
+        ]);
+
+        $data = [
+            'id_barang' => Request()->id_barang,
+            'nama_barang' => Request()->nama_barang,
+            'harga' => Request()->harga,
+            'stok' => Request()->stok,
+            'nama_supplier' => Request()->nama_supplier,
+        ];
+        $this->BarangModel->editData($id_barang, $data);
+        return redirect()->route('barangs')->with('pesan','Data berhasil diperbarui.');
+    }
+
+    public function ubah($id_barang) {
+        if (!$this->BarangModel->detailData($id_barang)) {
+            abort(404);
+        }
+        $data = [
+            'id_barang' => $this->BarangModel->detailData($id_barang),
+            'nama_supplier' => $this->SupplierModel->allData(),
+        ];
+        return view('penyimpanan/ubahpenyimpanan', $data);
+    }
+
 }

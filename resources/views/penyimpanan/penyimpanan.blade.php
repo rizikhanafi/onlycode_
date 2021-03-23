@@ -66,7 +66,7 @@
                             <td>{{ $data -> stok }}</td>
                             <td>{{ $data -> nama_supplier }}</td>
                             <td>
-                                <a href="#" class="btn btn-primary">
+                                <a href="/barang/ubah/{{$data -> id_barang}}" class="btn btn-primary">
                                     Edit
                                 </a>
                                 <a href="/barang/hapus/{{ $data -> id_barang }}" class="btn btn-danger">

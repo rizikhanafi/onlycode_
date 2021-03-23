@@ -41,3 +41,5 @@ Route::get('/barang', [App\Http\Controllers\BarangController::class, 'barang'])-
 Route::get('/barang/tambah', [App\Http\Controllers\BarangController::class, 'tambahbarang']);
 Route::post('/barang/tambah/insert', [BarangController::class,'insert']);
 Route::get('/barang/hapus/{id_barang}', [BarangController::class,'hapuss']);
+Route::post('/barang/update/{id_barang}', [BarangController::class,'update']);
+Route::get('/barang/ubah/{id_barang}', [BarangController::class,'ubah']);
