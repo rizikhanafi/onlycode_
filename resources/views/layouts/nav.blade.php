@@ -36,22 +36,22 @@
             <!-- Nav Item - Pages Collapse Menu -->
 
             <li class="nav-item">
-                <a class="nav-link" href="/barang">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Inventori</span></a>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link" href="/pemasok">
                     <i class="fas fa-user-plus"></i>
                     <span>Pemasok</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/barang">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Inventori</span></a>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Pengeluaran</span></a>
+                <a class="nav-link" href="/pembeli">
+                    <i class="fas fa-handshake"></i>
+                    <span>Pembeli</span></a>
             </li>
 
             <!-- Divider -->

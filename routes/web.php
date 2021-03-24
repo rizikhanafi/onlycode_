@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PembeliController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,11 @@ Route::post('/barang/tambah/insert', [BarangController::class,'insert']);
 Route::get('/barang/hapus/{id_barang}', [BarangController::class,'hapuss']);
 Route::post('/barang/update/{id_barang}', [BarangController::class,'update']);
 Route::get('/barang/ubah/{id_barang}', [BarangController::class,'ubah']);
+
+//Pembeli Geng
+Route::get('/pembeli', [App\Http\Controllers\PembeliController::class, 'pembeli'])->name('pembelis');
+Route::get('/pembeli/tambah', [App\Http\Controllers\PembeliController::class, 'tambahpembeli']);
+Route::post('/pembeli/tambah/insert', [App\Http\Controllers\PembeliController::class, 'insert']);
+Route::get('/pembeli/hapus/{id_pembeli}', [PembeliController::class,'hapuss']);
+Route::post('/pembeli/update/{id_pembeli}', [PembeliController::class,'update']);
+Route::get('/pembeli/ubah/{id_pembeli}', [PembeliController::class,'ubah']);

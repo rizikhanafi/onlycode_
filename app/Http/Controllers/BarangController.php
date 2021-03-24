@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BarangModel;
 use App\Models\SupplierModel;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class BarangController extends Controller
 {

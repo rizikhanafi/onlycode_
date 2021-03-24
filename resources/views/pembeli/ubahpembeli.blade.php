@@ -1,33 +1,45 @@
 @extends('layouts.template')
-@section('title','Pemasok')
+@section('title','Pembeli')
 @section('konten')
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Ubah Pemasok</h1>
-                    <p class="mb-4">Ubah pemasok dengan data real.</p>
+    <h1 class="h3 mb-2 text-gray-800">Ubah Pembeli</h1>
+                    <p class="mb-4">Ubah pembeli dengan data real.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Ubah Pemasok</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Ubah Pembeli</h6>
                         </div>
                         <div class="card-body">
-                            <form action="/pemasok/update/{{ $id_supplier-> id_supplier }}" method="POST" enctype="multipart/form-data">
+                            <form action="/pembeli/update/{{ $id_pembeli-> id_pembeli }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>ID :</label>
-                                    <input name="id_supplier" value="{{ $id_supplier-> id_supplier }}" readonly class="form-control form-control-solid @error('id_supplier') is-invalid @enderror">
-                                    @error('id_supplier')
+                                    <input name="id_pembeli" value="{{$id_pembeli -> id_pembeli}}" readonly class="form-control form-control-solid @error('id_pembeli') is-invalid @enderror">
+                                    @error('id_pembeli')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama Supplier :</label>
-                                    <input name="nama_supplier" value="{{ $id_supplier-> nama_supplier }}" required class="form-control form-control-solid @error('nama_supplier') is-invalid @enderror" type="text">
-                                    @error('nama_supplier')
+                                    <label>Nama Pembeli :</label>
+                                    <input name="nama_pembeli" value="{{$id_pembeli -> nama_pembeli}}" required class="form-control form-control-solid @error('nama_pembeli') is-invalid @enderror" type="text">
+                                    @error('nama_pembeli')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                                    <select class="form-control @error('jk') is-invalid @enderror" name="jk" id="jk">
+                                        <option>L</option>
+                                        <option>P</option>
+                                    </select>
+                                    @error('jk')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -35,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>No Telepon :</label>
-                                    <input name="no_telp" value="{{ $id_supplier-> no_telp }}" required class="form-control form-control-solid @error('no_telp') is-invalid @enderror" type="text">
+                                    <input name="no_telp" value="{{$id_pembeli -> no_telp}}" required class="form-control form-control-solid @error('no_telp') is-invalid @enderror" type="text">
                                     @error('no_telp')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,7 +56,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat :</label>
-                                    <input name="alamat" value="{{ $id_supplier -> alamat }}" required class="form-control form-control-solid @error('alamat') is-invalid @enderror" type="text">
+                                    <input name="alamat" value="{{$id_pembeli -> alamat}}" required class="form-control form-control-solid @error('alamat') is-invalid @enderror" type="textarea">
                                     @error('alamat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
