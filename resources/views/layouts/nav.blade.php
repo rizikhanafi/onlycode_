@@ -47,11 +47,20 @@
                     <span>Inventori</span></a>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="/pembeli">
+             <!-- Nav Item - Pages Collapse Menu -->
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-handshake"></i>
-                    <span>Pembeli</span></a>
+                    <span>Transaksi</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="/pembeli">Pembeli</a>
+                        <a class="collapse-item" href="/pembayaran">Pembayaran</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -62,18 +71,16 @@
                 Utilitas
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-cog"></i>
                     <span>Pengaturan</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-plus "></i>
                     <span>Tambah User</span></a>
             </li>

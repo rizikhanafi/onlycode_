@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,7 @@ Route::post('/pembeli/tambah/insert', [App\Http\Controllers\PembeliController::c
 Route::get('/pembeli/hapus/{id_pembeli}', [PembeliController::class,'hapuss']);
 Route::post('/pembeli/update/{id_pembeli}', [PembeliController::class,'update']);
 Route::get('/pembeli/ubah/{id_pembeli}', [PembeliController::class,'ubah']);
+
+//Pembayarab Geng
+Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'bayar'])->name('bayars');
+Route::get('/pembayaran/tambah', [App\Http\Controllers\PembayaranController::class, 'tambahbayar']);
