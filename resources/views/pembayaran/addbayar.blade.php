@@ -13,13 +13,13 @@
                             <h6 class="m-0 font-weight-bold text-primary">Tambah Pembayaran</h6>
                         </div>
                         <div class="card-body">
-                            <form action="/barang/tambah/insert" method="POST" enctype="multipart/form-data">
+                            <form action="/pembayaran/tambah/insert" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group">
                                     <label>ID :</label>
-                                    <input name="id_barang" type="text" value="BAR" class="form-control form-control-solid @error('id_barang') is-invalid @enderror">
-                                    @error('id_barang')
+                                    <input name="id_bayar" type="text" value="BEL" class="form-control form-control-solid @error('id_bayar') is-invalid @enderror">
+                                    @error('id_bayar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -42,12 +42,12 @@
 
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Barang :</label>
-                                    <select name="barang" class="form-control form-control-solid @error('barang') is-invalid @enderror" id="barang">
-                                        @foreach ($barang as $data)
-                                        <option>{{ $data -> nama_barang }}</option>
+                                    <select name="nama_barang" class="form-control form-control-solid @error('nama_barang') is-invalid @enderror" id="nama_barang">
+                                        @foreach ($barang as $datas)
+                                        <option>{{ $datas -> nama_barang }}</option>
                                         @endforeach
                                     </select>
-                                    @error('barang')
+                                    @error('nama_barang')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -55,26 +55,19 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="example-date-input">Tanggal Bayar :</label>
-
-                                      <input class="form-control form-control-solid" type="date" value="2011-08-19" id="example-date-input">
+                                    <label>Tanggal Bayar :</label>
+                                      <input type="date" name="tanggal_bayar" class="form-control form-control-solid @error('tanggal_bayar') is-invalid @enderror">
+                                      @error('tanggal_bayar')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
                                     </div>
-
 
                                   <div class="form-group">
                                     <label>Total Beli:</label>
                                     <input name="total_beli" value="{{ old('total_beli') }}" required class="form-control form-control-solid @error('total_beli') is-invalid @enderror" type="text">
                                     @error('total_beli')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Total Bayar :</label>
-                                    <input name="total_bayar" value="{{ old('total_bayar') }}" required class="form-control form-control-solid @error('total_bayar') is-invalid @enderror" type="text">
-                                    @error('total_bayar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -57,3 +57,5 @@ Route::get('/pembeli/ubah/{id_pembeli}', [PembeliController::class,'ubah']);
 //Pembayarab Geng
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'bayar'])->name('bayars');
 Route::get('/pembayaran/tambah', [App\Http\Controllers\PembayaranController::class, 'tambahbayar']);
+Route::post('/pembayaran/tambah/insert', [App\Http\Controllers\PembayaranController::class, 'insert']);
+Route::get('/pembayaran/hapus/{id_bayar}', [PembayaranController::class,'hapuss']);

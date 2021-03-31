@@ -44,7 +44,6 @@
                             <th>Barang</th>
                             <th>Tanggal Bayar</th>
                             <th>Total Beli</th>
-                            <th>Total Bayar</th>
                             <th>Keterangan</th>
                             <th>Konfigurasi</th>
                         </tr>
@@ -56,7 +55,6 @@
                             <th>Barang</th>
                             <th>Tanggal Bayar</th>
                             <th>Total Beli</th>
-                            <th>Total Bayar</th>
                             <th>Keterangan</th>
                             <th>Konfigurasi</th>
                         </tr>
@@ -64,14 +62,13 @@
                     <tbody>
                         @foreach ($nama as $data)
                         <tr>
-                            <td>{{ $data -> id_supplier }}</td>
-                            <td>{{ $data -> nama_supplier }}</td>
-                            <td>{{ $data -> no_telp }}</td>
-                            <td>{{ $data -> alamat }}</td>
+                            <td>{{ $data -> id_bayar }}</td>
+                            <td>{{ $data -> pembeli }}</td>
+                            <td>{{ $data -> nama_barang }}</td>
+                            <td>{{ $data -> tanggal_bayar }}</td>
+                            <td>{{ $data -> total_beli }}</td>
+                            <td>{{ $data -> keterangan }}</td>
                             <td>
-                                <a href="#" class="btn btn-primary">
-                                    Edit
-                                </a>
                                 <a href="#" class="btn btn-danger">
                                     Hapus
                                 </a>

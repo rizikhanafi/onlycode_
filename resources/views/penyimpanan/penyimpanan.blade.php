@@ -31,6 +31,7 @@
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
         aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" href="/barang/tambah">Tambah Data</a>
+        <a class="dropdown-item" href="#">Tambah Stok</a>
                                         </div>
                                     </div>
                                 </div>
