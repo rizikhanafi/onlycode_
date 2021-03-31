@@ -41,6 +41,7 @@ Route::get('/pemasok/ubah/{id_supplier}', [SupplierController::class,'ubah']);
 //Penyimpanan Geng
 Route::get('/barang', [App\Http\Controllers\BarangController::class, 'barang'])->name('barangs');
 Route::get('/barang/tambah', [App\Http\Controllers\BarangController::class, 'tambahbarang']);
+Route::post('/barang/tambahstok', [App\Http\Controllers\BarangController::class, 'tambahstok']);
 Route::post('/barang/tambah/insert', [BarangController::class,'insert']);
 Route::get('/barang/hapus/{id_barang}', [BarangController::class,'hapuss']);
 Route::post('/barang/update/{id_barang}', [BarangController::class,'update']);

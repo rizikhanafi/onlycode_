@@ -101,4 +101,26 @@ class BarangController extends Controller
         return view('penyimpanan/ubahpenyimpanan', $data);
     }
 
+    public function tambahstok() {
+        Request()->validate([
+            'id' => 'nullable',
+            'nama_barang' => 'required',
+            'stok' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'tgl' => 'required',
+        ], [
+            'tgl.required' => 'Tanggal harus diisi.',
+            'stok.regex' => 'Inputan harus berupa angka.',
+        ]);
+
+    $data = [
+        'id' => Request()->id,
+        'nama_barang' => Request()->nama_barang,
+        'stok' => Request()->stok,
+        'tgl' => Request()->tgl,
+    ];
+    $this->BarangModel->tambahStok($data);
+   return redirect()->route('barangs')->with('pesan','Data sukses ditambahkan.');
+
+    }
+
 }

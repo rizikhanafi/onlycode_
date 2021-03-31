@@ -31,10 +31,75 @@
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
         aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" href="/barang/tambah">Tambah Data</a>
-        <a class="dropdown-item" href="#">Tambah Stok</a>
-                                        </div>
-                                    </div>
-                                </div>
+        <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">Tambah Stok</a>
+        </div>
+
+        <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Tambah Stok Barang</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="/barang/tambahstok" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label>ID :</label>
+                        <input name="id" type="text" readonly placeholder="ID terisi otomatis.." class="form-control form-control-solid @error('id') is-invalid @enderror">
+                        @error('id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Nama Barang :</label>
+                        <select name="nama_barang" class="form-control form-control-solid @error('nama_barang') is-invalid @enderror" id="nama_barang">
+                            @foreach ($nama_barang as $data)
+                            <option>{{ $data -> nama_barang }}</option>
+                            @endforeach
+                        </select>
+                        @error('nama_barang')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stok :</label>
+                        <input name="stok" value="{{ old('stok') }}" required class="form-control form-control-solid @error('stok') is-invalid @enderror" type="text">
+                        @error('stok')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tanggal:</label>
+                          <input type="date" name="tgl" class="form-control form-control-solid @error('tgl') is-invalid @enderror">
+                          @error('tgl')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                        </div>
+            </div>
+            <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+            <button class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+        </div>
+    </div>
+    </div>
+    <!-- END MODAAAALL -->
+         </div>
+         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

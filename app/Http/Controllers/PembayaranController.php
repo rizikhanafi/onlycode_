@@ -35,14 +35,14 @@ class PembayaranController extends Controller
 
     public function insert(){
         Request()->validate([
-            'id_bayar' => 'required|unique:bayar,id_bayar',
+            'id_bayar' => 'nullable',
             'pembeli' => 'required',
             'nama_barang' => 'required',
             'tanggal_bayar' => 'required|date|after:yesterday',
             'total_beli' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'keterangan' => 'required',
         ], [
-            'id_bayar.unique' => 'ID sudah ada pada data.',
+            'tanggal_bayar.required' => 'Tanggal harus diisi.',
             'total_beli.regex' => 'Inputan harus berupa angka.',
         ]);
 
@@ -57,5 +57,18 @@ class PembayaranController extends Controller
     $this->PembayaranModel->addData($datai);
    return redirect()->route('bayars')->with('pesan','Transaksi berhasil.');
 
+    }
+
+    public function hapuss($id_bayar){
+        $data = [
+        'id_bayar' => Request()->id_bayar,
+        'pembeli' => Request()->pembeli,
+        'nama_barang' => Request()->nama_barang,
+        'tanggal_bayar' => Request()->tanggal_bayar,
+        'total_beli' => Request()->total_beli,
+        'keterangan' => Request()->keterangan,
+        ];
+        $this->PembayaranModel->deleteData($data);
+       return redirect()->route('bayars')->with('pesan','Data berhasil dihapus.');
     }
 }

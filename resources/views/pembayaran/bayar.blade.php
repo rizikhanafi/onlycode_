@@ -69,7 +69,7 @@
                             <td>{{ $data -> total_beli }}</td>
                             <td>{{ $data -> keterangan }}</td>
                             <td>
-                                <a href="#" class="btn btn-danger">
+                                <a href="/pembayaran/hapus/{{ $data -> id_bayar }}" class="btn btn-danger">
                                     Hapus
                                 </a>
                             </td>

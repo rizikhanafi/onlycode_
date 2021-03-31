@@ -24,8 +24,11 @@ class BarangModel extends Model
     public function editData($id_barang, $data){
         return DB::table('barang')->where ('id_barang', $id_barang)->update($data);
     }
-    
+
     public function detailData($id_barang) {
             return DB::table('barang')->where('id_barang', $id_barang)->first();
+    }
+    public function tambahStok($data) {
+        return DB::table('update_barang') -> insert($data);
     }
 }

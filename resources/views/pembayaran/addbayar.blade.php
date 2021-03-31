@@ -18,7 +18,7 @@
 
                                 <div class="form-group">
                                     <label>ID :</label>
-                                    <input name="id_bayar" type="text" value="BEL" class="form-control form-control-solid @error('id_bayar') is-invalid @enderror">
+                                    <input name="id_bayar" type="text" readonly placeholder="ID otomatis.." class="form-control form-control-solid @error('id_bayar') is-invalid @enderror">
                                     @error('id_bayar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
