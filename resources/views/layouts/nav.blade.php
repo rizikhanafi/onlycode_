@@ -73,16 +73,9 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="tentang">
                     <i class="fas fa-cog"></i>
-                    <span>Pengaturan</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-plus "></i>
-                    <span>Tambah User</span></a>
+                    <span>Tentang Aplikasi</span></a>
             </li>
 
             <!-- Divider -->
