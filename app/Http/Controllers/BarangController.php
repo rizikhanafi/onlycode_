@@ -33,7 +33,6 @@ class BarangController extends Controller
         Request()->validate([
             'id_barang' => 'required|unique:barang,id_barang|min:4|max:5',
             'nama_barang' => 'required|unique:barang,nama_barang',
-            'harga' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'stok' => 'required|min:1|max:3',
             'nama_supplier' => 'required',
         ], [
@@ -41,7 +40,6 @@ class BarangController extends Controller
             'id_barang.max' => 'ID tidak boleh lebih dari 5 angka.',
             'id_barang.unique' => 'ID sudah ada pada data.',
             'id_barang.required' => 'ID harus diisi.',
-            'harga.regex' => 'Inputan harus berupa angka.',
             'stok.min' => 'No telepon minimal 12 angka.',
             'stok.max' => 'No telepon minimal 14 angka.',
         ]);
@@ -49,7 +47,6 @@ class BarangController extends Controller
     $data = [
         'id_barang' => Request()->id_barang,
         'nama_barang' => Request()->nama_barang,
-        'harga' => Request()->harga,
         'stok' => Request()->stok,
         'nama_supplier' => Request()->nama_supplier,
     ];
@@ -62,7 +59,6 @@ class BarangController extends Controller
         $data = [
             'id_barang' => Request()->id_barang,
             'nama_barang' => Request()->nama_barang,
-            'harga' => Request()->harga,
             'stok' => Request()->stok,
             'nama_supplier' => Request()->nama_supplier,
         ];
@@ -74,7 +70,6 @@ class BarangController extends Controller
         Request()->validate([
             'id_barang' => 'required',
             'nama_barang' => 'required',
-            'harga' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'stok' => 'required|min:1|max:3',
             'nama_supplier' => 'required',
         ]);
@@ -82,7 +77,6 @@ class BarangController extends Controller
         $data = [
             'id_barang' => Request()->id_barang,
             'nama_barang' => Request()->nama_barang,
-            'harga' => Request()->harga,
             'stok' => Request()->stok,
             'nama_supplier' => Request()->nama_supplier,
         ];

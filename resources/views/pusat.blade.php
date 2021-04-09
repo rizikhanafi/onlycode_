@@ -108,7 +108,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Data Barang</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,18 +116,41 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="barang/tambah">Tambah Barang</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dtBasicExample" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nama Barang</th>
+                                                    <th>Stok</th>
+                                                    <th>Nama Supplier</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nama Barang</th>
+                                                    <th>Stok</th>
+                                                    <th>Nama Supplier</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                @foreach ($nama_barang as $data)
+                                                <tr>
+                                                    <td>{{ $data -> id_barang }}</td>
+                                                    <td>{{ $data -> nama_barang }}</td>
+                                                    <td>{{ $data -> stok }}</td>
+                                                    <td>{{ $data -> nama_supplier }}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

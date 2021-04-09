@@ -36,16 +36,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Harga :</label>
-                                    <input name="harga" value="{{ old('harga') }}" required class="form-control form-control-solid @error('harga') is-invalid @enderror" type="text">
-                                    @error('harga')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-
-                                <div class="form-group">
                                     <label>Stok :</label>
                                     <input name="stok" value="{{ old('stok') }}" required class="form-control form-control-solid @error('stok') is-invalid @enderror" type="text">
                                     @error('stok')

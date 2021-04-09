@@ -19,7 +19,8 @@ class PusatController extends Controller
         $supplier = DB::table('supplier')->get()->count();
         $pembeli = DB::table('pembeli')->get()->count();
         $transaksi = DB::table('bayar')->get()->count();
+        $nama_barang = DB::table('barang')->get();
 
-        return view('pusat', compact('barang','supplier','pembeli','transaksi'));
+        return view('pusat', compact('barang','supplier','pembeli','transaksi','nama_barang'));
     }
 }

@@ -107,7 +107,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Nama Barang</th>
-                            <th>Harga</th>
                             <th>Stok</th>
                             <th>Nama Supplier</th>
                             <th>Konfigurasi</th>
@@ -117,7 +116,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Nama Barang</th>
-                            <th>Harga</th>
                             <th>Stok</th>
                             <th>Nama Supplier</th>
                             <th>Konfigurasi</th>
@@ -128,7 +126,6 @@
                         <tr>
                             <td>{{ $data -> id_barang }}</td>
                             <td>{{ $data -> nama_barang }}</td>
-                            <td>{{ $data -> harga }}</td>
                             <td>{{ $data -> stok }}</td>
                             <td>{{ $data -> nama_supplier }}</td>
                             <td>
