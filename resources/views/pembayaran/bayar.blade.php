@@ -60,7 +60,7 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($nama as $data)
+                        @foreach ($bayar as $data)
                         <tr>
                             <td>{{ $data -> id_bayar }}</td>
                             <td>{{ $data -> pembeli }}</td>
@@ -78,6 +78,7 @@
                     </tbody>
                 </table>
             </div>
+                {{ $bayar->links() }}
         </div>
     </div>
 

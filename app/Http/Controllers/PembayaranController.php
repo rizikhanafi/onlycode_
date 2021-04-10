@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\PembayaranModel;
 use App\Models\PembeliModel;
 use App\Models\BarangModel;
+use DB;
+use Illuminate\Pagination\Paginator;
 
 class PembayaranController extends Controller
 {
@@ -17,10 +19,9 @@ class PembayaranController extends Controller
     }
 
     public function bayar() {
-        $data = [
-            'nama' => $this->PembayaranModel->allData(),
-        ];
-        return view('pembayaran/bayar', $data);
+        Paginator::useBootstrap();
+        $bayar = DB::table('bayar')->paginate(5);
+        return view('pembayaran/bayar', compact('bayar'));
     }
 
     public function tambahbayar(){

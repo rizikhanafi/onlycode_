@@ -152,6 +152,7 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    {{ $nama_barang->links() }}
                                 </div>
                             </div>
                         </div>

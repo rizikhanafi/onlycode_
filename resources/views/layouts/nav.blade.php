@@ -19,7 +19,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -35,13 +35,13 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('pemasok','pemasok/tambah', 'pemasok/update') ? 'active' : '' }}">
                 <a class="nav-link" href="/pemasok">
                     <i class="fas fa-user-plus"></i>
                     <span>Pemasok</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('barang','barang/tambah', 'barang/update') ? 'active' : '' }}">
                 <a class="nav-link" href="/barang">
                     <i class="fas fa-briefcase"></i>
                     <span>Inventori</span></a>
@@ -56,7 +56,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
+                        <h6 class="collapse-header">Pilihan:</h6>
                         <a class="collapse-item" href="/pembeli">Pembeli</a>
                         <a class="collapse-item" href="/pembayaran">Pembayaran</a>
                     </div>
@@ -72,7 +72,7 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('tentang') ? 'active' : '' }}">
                 <a class="nav-link" href="tentang">
                     <i class="fas fa-cog"></i>
                     <span>Tentang Aplikasi</span></a>
